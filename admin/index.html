@@ -304,7 +304,6 @@ body.drawer-open{overflow:hidden}
   button.querySelector(".switch-word").textContent=enabled?"تشغيل":"إيقاف";
   if(!item.configured)state.textContent=enabled?"مفعّل في اللوحة — مفتاح API غير مهيأ":"متوقف — مفتاح API غير مهيأ";
   else if(item.active)state.textContent=enabled?"مفعّل ومفتاح API مهيأ":"متوقف";
-  else if(provider==="qwen"&&enabled)state.textContent="مفعّل، لكن التعاون الثنائي غير مفعّل على السيرفر";
   else state.textContent="متوقف";
  };
  const loadAIProviders=async()=>{
