@@ -29,6 +29,19 @@
 .side-close{width:34px;height:34px;border:1px solid var(--line);border-radius:10px;background:var(--surface2);color:var(--ink);font-size:20px;line-height:1}
 body.drawer-open{overflow:hidden}
 @media(max-width:700px){.side{position:fixed!important;width:min(310px,86vw)!important;height:100dvh!important;padding:20px 15px!important;gap:22px!important}.side .nav{display:grid;overflow:visible}.side .nav:before{display:block}.side .nav button{white-space:normal;text-align:right;justify-content:flex-start;padding:12px 14px;font-size:13px;background:transparent}.side .side-note{display:block}.top{align-items:flex-start;flex-direction:row;flex-wrap:wrap}.top>div:first-child{flex:1;min-width:170px}.actions{width:auto;flex-wrap:nowrap}.actions .btn{flex:initial}.menu-toggle{order:-1}}
+
+.ai-provider-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:14px}
+.ai-provider-card{border:1px solid var(--line);border-radius:15px;padding:16px;background:var(--surface2);display:flex;align-items:center;justify-content:space-between;gap:14px}
+.ai-provider-card h3{font-size:14px;margin:0 0 6px}.ai-provider-card p{font-size:11px;color:var(--muted);line-height:1.8;margin:0}
+.ai-provider-state{display:block;font-size:10px;color:var(--muted);margin-top:6px}
+.provider-switch{position:relative;flex:none;width:100px;height:40px;border:1px solid var(--line);border-radius:30px;background:#e7e3d8;color:#55594d;padding:0 9px;text-align:left;font-size:11px;font-weight:750;transition:background .2s,border-color .2s;direction:rtl}
+.provider-switch .switch-word{display:block;padding-right:33px;transition:all .2s}
+.provider-switch:after{content:"";position:absolute;right:4px;top:4px;width:30px;height:30px;border-radius:50%;background:white;box-shadow:0 2px 7px #0002;transition:right .22s ease}
+.provider-switch[data-enabled="true"]{background:var(--olive);border-color:var(--olive-dark);color:white}
+.provider-switch[data-enabled="true"] .switch-word{padding-right:0;padding-left:34px;text-align:left}
+.provider-switch[data-enabled="true"]:after{right:64px}
+.provider-switch:disabled{opacity:.55;cursor:wait}
+@media(max-width:650px){.ai-provider-grid{grid-template-columns:1fr}.ai-provider-card{padding:13px}}
 </style></head><body>
 <section id="bootScreen"><div class="boot-mark" aria-hidden="true"></div><div>جارٍ تجهيز مساحة نايرا…</div></section>
 <section id="loginScreen" class="login-wrap hidden"><div class="login-card">
@@ -88,6 +101,21 @@ body.drawer-open{overflow:hidden}
 </section>
 <section class="view" id="botSettings">
  <section class="panel">
+  <div class="section-head"><h2>مزودو الخدمة</h2><span>تحكم مباشر بدون Restart</span></div>
+  <p class="reflection">شغّل أو أوقف كل مزود بشكل مستقل. التغيير يُحفظ فورًا ويُطبّق على طلبات البوت الجديدة.</p>
+  <div class="ai-provider-grid">
+   <article class="ai-provider-card">
+    <div><h3>Google Gemini</h3><p>مزود الرد الأساسي وصياغة شخصية نايرا.</p><small class="ai-provider-state" id="geminiProviderState">جارٍ تحميل الحالة…</small></div>
+    <button class="provider-switch" id="geminiProviderToggle" type="button" data-enabled="true" aria-pressed="true"><span class="switch-word">تشغيل</span></button>
+   </article>
+   <article class="ai-provider-card">
+    <div><h3>Qwen</h3><p>مزود التحليل والمساعد الاحتياطي عند الحاجة.</p><small class="ai-provider-state" id="qwenProviderState">جارٍ تحميل الحالة…</small></div>
+    <button class="provider-switch" id="qwenProviderToggle" type="button" data-enabled="false" aria-pressed="false"><span class="switch-word">إيقاف</span></button>
+   </article>
+  </div>
+  <div id="aiProvidersStatus" class="status" role="status"></div>
+ </section>
+ <section class="panel" style="margin-top:15px">
   <div class="section-head"><h2>رسالة الترحيب</h2><span>تظهر عند إرسال /start</span></div>
   <div class="field"><label for="botWelcomeText">النص الترحيبي</label><textarea id="botWelcomeText" rows="5" maxlength="3500" placeholder="اكتب رسالة الترحيب هنا..."></textarea></div>
  </section>
@@ -268,6 +296,31 @@ body.drawer-open{overflow:hidden}
    actions.append(enabledLabel,up,down,remove);row.append(fields,actions);box.append(row);
   });
  };
+ const aiProviderNames={gemini:"Gemini",qwen:"Qwen"};
+ const aiProviderStatus=(message,kind="")=>{$("aiProvidersStatus").textContent=message;$("aiProvidersStatus").className="status "+kind};
+ const renderAIProvider=(provider,item)=>{
+  const button=$(provider+"ProviderToggle");const state=$(provider+"ProviderState");
+  const enabled=!!item.enabled;button.dataset.enabled=String(enabled);button.setAttribute("aria-pressed",String(enabled));
+  button.querySelector(".switch-word").textContent=enabled?"تشغيل":"إيقاف";
+  if(!item.configured)state.textContent=enabled?"مفعّل في اللوحة — مفتاح API غير مهيأ":"متوقف — مفتاح API غير مهيأ";
+  else if(item.active)state.textContent=enabled?"مفعّل وجاهز للاستخدام":"متوقف";
+  else if(provider==="qwen"&&enabled)state.textContent="مفعّل، لكن التعاون الثنائي غير مفعّل على السيرفر";
+  else state.textContent="متوقف";
+ };
+ const loadAIProviders=async()=>{
+  aiProviderStatus("جارٍ تحميل حالة مزودي الخدمة…");
+  try{const data=await apiRequest("/admin/ai-providers");renderAIProvider("gemini",data.items.gemini);renderAIProvider("qwen",data.items.qwen);aiProviderStatus("تم تحميل إعدادات مزودي الخدمة.","ok")}
+  catch(e){aiProviderStatus("تعذر تحميل مزودي الخدمة: "+e.message,"bad")}
+ };
+ const toggleAIProvider=async(provider)=>{
+  const button=$(provider+"ProviderToggle");const enabled=button.dataset.enabled!=="true";
+  button.disabled=true;aiProviderStatus("جارٍ "+(enabled?"تشغيل ":"إيقاف ")+aiProviderNames[provider]+"…");
+  try{await apiRequest("/admin/ai-providers/"+provider,{method:"PATCH",body:JSON.stringify({enabled})});await loadAIProviders();aiProviderStatus("تم "+(enabled?"تشغيل ":"إيقاف ")+aiProviderNames[provider]+" بنجاح.","ok")}
+  catch(e){aiProviderStatus("فشل تغيير حالة "+aiProviderNames[provider]+": "+e.message,"bad")}
+  finally{button.disabled=false}
+ };
+ $("geminiProviderToggle").onclick=()=>toggleAIProvider("gemini");
+ $("qwenProviderToggle").onclick=()=>toggleAIProvider("qwen");
  const loadBotSettings=async()=>{
   botSettingsStatus("جارٍ تحميل الإعدادات…");
   try{const data=await apiRequest("/admin/bot-settings");$("botWelcomeText").value=data.welcome_text||"";welcomeButtons=Array.isArray(data.buttons)?data.buttons.map(x=>({...x})):[];$("welcomeButtonsPerRow").value=String(data.buttons_per_row===1?1:2);renderWelcomeButtons();botSettingsStatus("تم تحميل إعدادات البوت.","ok")}
@@ -436,7 +489,7 @@ body.drawer-open{overflow:hidden}
   if(target==="activity"&&token) loadActivities();
   if(target==="content") loadContentChannels();
   if(target==="server"&&token) loadServerDeployments();
-  if(target==="botSettings"&&token){loadBotSettings();loadAccessResponses();}
+  if(target==="botSettings"&&token){loadBotSettings();loadAccessResponses();loadAIProviders();}
   if(target==="access"&&token) loadAccessData();
   if(target==="skills"&&token) loadSkills();
  };
