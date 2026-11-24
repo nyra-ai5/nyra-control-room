@@ -693,8 +693,8 @@ body.drawer-open{overflow:hidden}
  $("monitorLogsCopy").onclick=async()=>{if(!monitorLogCache.trim()){monitorMessage("لا توجد سجلات لنسخها.");return}try{await navigator.clipboard.writeText(monitorLogCache);monitorMessage("تم نسخ سجل التشغيل.","ok")}catch(e){monitorMessage("تعذر النسخ التلقائي؛ يمكنك تحديد النص ونسخه يدويًا.","bad")}};
  $("monitorLogsClear").onclick=()=>{$("monitorLogs").textContent="تم تنظيف شاشة العرض فقط. السجلات الأصلية محفوظة لدى BotHost.";monitorLogCache="";};
  window.addEventListener("hashchange",()=>activateView(location.hash.slice(1),false));
- if(location.hash) history.replaceState(null,"",location.pathname+location.search);
- activateView("overview",false);
+ const initialView=location.hash.slice(1)||"overview";
+ activateView(initialView,false);
  if(token&&apiBase){showBoot();showApp().catch(()=>{token="";sessionStorage.removeItem("nyra_admin_session");showLogin()})}else{showLogin()}
 })();
 </script></body></html>
