@@ -44,7 +44,7 @@ body.drawer-open{overflow:hidden}
 @media(max-width:650px){.ai-provider-grid{grid-template-columns:1fr}.ai-provider-card{padding:13px}}
 
 /* Single-open accordion navigation */
-.nav{gap:9px}.nav:before{content:"CONTROL MENU";padding-bottom:2px}.nav-group{border:1px solid var(--line);border-radius:13px;background:var(--surface2);overflow:hidden}.nav-group-toggle{width:100%;border:0;background:transparent;color:var(--ink);padding:13px 13px;text-align:right;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12px;font-weight:750;border-radius:0}.nav-group-toggle:before{display:none!important}.nav-group-toggle:hover,.nav-group.open>.nav-group-toggle{background:var(--olive-soft);color:var(--olive-dark)}.nav-chevron{font-size:17px;line-height:1;transition:transform .2s ease;color:var(--muted)}.nav-group.open .nav-chevron{transform:rotate(180deg)}.nav-items{display:grid;gap:3px;padding:0 7px 7px}.nav-group:not(.open) .nav-items{display:none}.nav-items button{font-size:11px!important;padding:10px 11px!important;margin:0 0 0 0;border-radius:9px!important}.nav-items button:before{width:6px!important;height:6px!important}.nav-items button.active{background:var(--surface)!important;color:var(--ink)!important;box-shadow:inset -2px 0 var(--olive)}.nav-items button.active:before{background:var(--olive);border-color:var(--olive)}
+.nav{gap:9px}.nav:before{content:"CONTROL MENU";padding-bottom:2px}.nav-group{border:1px solid var(--line);border-radius:13px;background:var(--surface2);overflow:hidden}.nav-group-toggle{width:100%;border:0;background:transparent;color:var(--ink);padding:13px 13px;text-align:right;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12px;font-weight:750;border-radius:0}.nav-group-toggle:before{display:none!important}.nav-group-toggle:hover,.nav-group.open>.nav-group-toggle{background:var(--olive-soft);color:var(--olive-dark)}.nav-items{display:grid;gap:3px;padding:0 7px 7px}.nav-group:not(.open) .nav-items{display:none}.nav-items button{font-size:11px!important;padding:10px 11px!important;margin:0 0 0 0;border-radius:9px!important}.nav-items button:before{width:6px!important;height:6px!important}.nav-items button.active{background:var(--surface)!important;color:var(--ink)!important;box-shadow:inset -2px 0 var(--olive)}.nav-items button.active:before{background:var(--olive);border-color:var(--olive)}
 @media(max-width:700px){.side .nav{display:grid;overflow:visible;gap:8px}.side .nav-group{width:100%}.side .nav-group-toggle{white-space:normal;text-align:right;justify-content:space-between;padding:13px;font-size:12px}.side .nav-items{display:grid}.side .nav-items button{white-space:normal;text-align:right;justify-content:flex-start;padding:10px 11px;font-size:11px;background:transparent}}
 </style></head><body>
 <section id="bootScreen"><div class="boot-mark" aria-hidden="true"></div><div>جارٍ تجهيز مساحة نايرا…</div></section>
@@ -63,7 +63,7 @@ body.drawer-open{overflow:hidden}
 <aside class="side" id="sideDrawer" aria-label="القائمة الجانبية"><div class="brand"><div class="mark">N</div><div><strong>NYRA CONTROL</strong><small>PRIVATE ADMIN SPACE</small></div><button class="side-close" id="sideCloseBtn" type="button" aria-label="إغلاق القائمة">×</button></div>
 <nav class="nav" aria-label="التنقل">
  <section class="nav-group open" data-views="overview workspace decisions">
-  <button class="nav-group-toggle" type="button" aria-expanded="true"><span>الرئيسية</span><span class="nav-chevron">⌄</span></button>
+  <button class="nav-group-toggle" type="button" aria-expanded="true"><span>الرئيسية</span></button>
   <div class="nav-items">
    <button class="active" data-view="overview">نظرة عامة</button>
    <button data-view="workspace">مساحة العمل</button>
@@ -71,19 +71,19 @@ body.drawer-open{overflow:hidden}
   </div>
  </section>
  <section class="nav-group" data-views="content">
-  <button class="nav-group-toggle" type="button" aria-expanded="false"><span>إدارة المحتوى</span><span class="nav-chevron">⌄</span></button>
+  <button class="nav-group-toggle" type="button" aria-expanded="false"><span>إدارة المحتوى</span></button>
   <div class="nav-items"><button data-view="content">قنوات المحتوى</button></div>
  </section>
  <section class="nav-group" data-views="botSettings">
-  <button class="nav-group-toggle" type="button" aria-expanded="false"><span>إدارة نايرا</span><span class="nav-chevron">⌄</span></button>
+  <button class="nav-group-toggle" type="button" aria-expanded="false"><span>إدارة نايرا</span></button>
   <div class="nav-items"><button data-view="botSettings">إعدادات البوت ومزودو الخدمة</button></div>
  </section>
  <section class="nav-group" data-views="access">
-  <button class="nav-group-toggle" type="button" aria-expanded="false"><span>الأعضاء والدعوات</span><span class="nav-chevron">⌄</span></button>
+  <button class="nav-group-toggle" type="button" aria-expanded="false"><span>الأعضاء والدعوات</span></button>
   <div class="nav-items"><button data-view="access">الدعوات والأعضاء</button></div>
  </section>
  <section class="nav-group" data-views="monitor server integrations">
-  <button class="nav-group-toggle" type="button" aria-expanded="false"><span>التشغيل والمراقبة</span><span class="nav-chevron">⌄</span></button>
+  <button class="nav-group-toggle" type="button" aria-expanded="false"><span>التشغيل والمراقبة</span></button>
   <div class="nav-items">
    <button data-view="monitor">مركز المراقبة</button>
    <button data-view="server">إدارة السيرفر</button>
@@ -91,7 +91,7 @@ body.drawer-open{overflow:hidden}
   </div>
  </section>
  <section class="nav-group" data-views="activity automations skills system">
-  <button class="nav-group-toggle" type="button" aria-expanded="false"><span>أدوات الإدارة</span><span class="nav-chevron">⌄</span></button>
+  <button class="nav-group-toggle" type="button" aria-expanded="false"><span>أدوات الإدارة</span></button>
   <div class="nav-items">
    <button data-view="activity">سجل الأنشطة</button>
    <button data-view="automations">الأتمتة</button>
@@ -642,8 +642,8 @@ body.drawer-open{overflow:hidden}
  $("monitorLogsCopy").onclick=async()=>{if(!monitorLogCache.trim()){monitorMessage("لا توجد سجلات لنسخها.");return}try{await navigator.clipboard.writeText(monitorLogCache);monitorMessage("تم نسخ سجل التشغيل.","ok")}catch(e){monitorMessage("تعذر النسخ التلقائي؛ يمكنك تحديد النص ونسخه يدويًا.","bad")}};
  $("monitorLogsClear").onclick=()=>{$("monitorLogs").textContent="تم تنظيف شاشة العرض فقط. السجلات الأصلية محفوظة لدى BotHost.";monitorLogCache="";};
  window.addEventListener("hashchange",()=>activateView(location.hash.slice(1),false));
- const savedView=location.hash.replace(/^#/,"");
- activateView(viewTitles[savedView]?savedView:"overview",false);
+ if(location.hash) history.replaceState(null,"",location.pathname+location.search);
+ activateView("overview",false);
  if(token&&apiBase){showBoot();showApp().catch(()=>{token="";sessionStorage.removeItem("nyra_admin_session");showLogin()})}else{showLogin()}
 })();
 </script></body></html>
