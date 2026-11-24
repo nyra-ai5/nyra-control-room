@@ -521,7 +521,7 @@ body.drawer-open{overflow:hidden}
  const activateView=(viewId,writeHash=true)=>{
   const target=viewTitles[viewId]?viewId:"overview";
   document.querySelectorAll("#sideDrawer .nav-group").forEach(group=>{
-   const contains=(group.dataset.views||"").split(/\\s+/).includes(target);
+   const contains=(group.dataset.views||"").split(/\s+/).includes(target);
    group.classList.toggle("open",contains);
    const toggle=group.querySelector(".nav-group-toggle");if(toggle)toggle.setAttribute("aria-expanded",contains?"true":"false");
   });
