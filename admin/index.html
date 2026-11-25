@@ -97,6 +97,18 @@ body.drawer-open{overflow:hidden}
  .nav-group,.nav-group-toggle,.nav-items button,.nav-items button:before{transition:none!important}
  .nav-items button:hover,.nav-items button.active{transform:none}
 }
+.personality-presets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:15px}
+.personality-preset{border:1px solid var(--line);border-radius:14px;background:var(--surface2);padding:16px;text-align:right;color:var(--ink);display:grid;gap:7px;transition:border-color .18s,background .18s,transform .18s}
+.personality-preset:hover{transform:translateY(-2px);border-color:var(--olive)}
+.personality-preset[aria-pressed="true"]{border:2px solid var(--olive);background:var(--olive-soft);padding:15px}
+.personality-preset strong{font-size:13px}.personality-preset span{font-size:11px;color:var(--muted);line-height:1.8}.personality-preset small{font-size:10px;color:var(--olive-dark);font-weight:750}
+.personality-sliders{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:15px}
+.personality-slider{border:1px solid var(--line);border-radius:13px;padding:14px;background:var(--surface2)}
+.personality-slider-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:9px}
+.personality-slider-head label{font-size:12px;font-weight:700}.personality-slider-head output{font-size:16px;font-weight:800;font-variant-numeric:tabular-nums;color:var(--olive-dark)}
+.personality-slider input[type="range"]{width:100%;accent-color:var(--olive);direction:rtl}.personality-slider small{font-size:10px;color:var(--muted);line-height:1.7}
+.personality-actions{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-top:16px}
+@media(max-width:700px){.personality-presets,.personality-sliders{grid-template-columns:1fr}.personality-preset{padding:14px}}
 </style></head><body>
 <section id="bootScreen"><div class="boot-mark" aria-hidden="true"></div><div>جارٍ تجهيز مساحة نايرا…</div></section>
 <section id="loginScreen" class="login-wrap hidden"><div class="login-card">
@@ -125,9 +137,9 @@ body.drawer-open{overflow:hidden}
   <button class="nav-group-toggle" type="button" aria-expanded="false"><span>إدارة المحتوى</span></button>
   <div class="nav-items"><button data-view="content">قنوات المحتوى</button></div>
  </section>
- <section class="nav-group" data-views="botSettings">
+ <section class="nav-group" data-views="botSettings personality">
   <button class="nav-group-toggle" type="button" aria-expanded="false"><span>إدارة نايرا</span></button>
-  <div class="nav-items"><button data-view="botSettings">إعدادات البوت ومزودو الخدمة</button></div>
+  <div class="nav-items"><button data-view="botSettings">إعدادات البوت ومزودو الخدمة</button><button data-view="personality">الشخصية والمزاج</button></div>
  </section>
  <section class="nav-group" data-views="access">
   <button class="nav-group-toggle" type="button" aria-expanded="false"><span>الأعضاء والدعوات</span></button>
@@ -230,6 +242,21 @@ body.drawer-open{overflow:hidden}
   <div id="accessResponsesStatus" class="status" role="status"></div>
  </section>
 </section>
+<section class="view" id="personality">
+  <section class="panel">
+   <div class="section-head"><h2>مكتبة الشخصيات الجاهزة</h2><span>اختار نموذج وابدأ منه</span></div>
+   <p class="reflection">النماذج دي بتضبط نسب السمات تلقائيًا. تقدر تعدّل أي نسبة بعدها من غير ما تتغير هوية NYRA Core أو لهجتها المصرية.</p>
+   <div id="personalityPresets" class="personality-presets"><div class="empty">جارٍ تحميل نماذج الشخصية…</div></div>
+  </section>
+  <section class="panel" style="margin-top:15px">
+   <div class="section-head"><h2>التحكم في المزاج</h2><span>كل شريط مستقل · 0% إلى 100%</span></div>
+   <p class="reflection">النسب بتحدد قوة تأثير كل صفة، ومش لازم مجموعها يساوي 100%. اختار المزيج اللي يناسبك.</p>
+   <div id="personalitySliders" class="personality-sliders"><div class="empty">جارٍ تحميل إعدادات المزاج…</div></div>
+   <div class="personality-actions"><button class="btn" id="personalityReloadBtn" type="button">إعادة تحميل</button><button class="btn primary" id="personalitySaveBtn" type="button">حفظ إعدادات الشخصية</button></div>
+   <div id="personalityStatus" class="status" role="status"></div>
+  </section>
+  <section class="panel" style="margin-top:15px"><div class="section-head"><h2>قواعد ثبات الشخصية</h2><span>ثابتة دائمًا</span></div><p class="reflection">هوية نايرا المصرية تظل ثابتة. الالتزام بالمهمة وفهم السياق يسبقان المزاج؛ المرح والسخرية لا يبرران تجاهل طلب جاد أو اختراع افتراضات أو إطالة الرد بلا داعٍ.</p></section>
+ </section>
 <section class="view" id="access">
  <section class="panel">
   <div class="section-head"><h2>إدارة الدعوات</h2><span>دخول خاص للأعضاء</span></div>
@@ -426,6 +453,66 @@ body.drawer-open{overflow:hidden}
   catch(e){botSettingsStatus("فشل الحفظ: "+e.message,"bad")}
   finally{btn.disabled=false}
  };
+  const personalityAxes=[
+   {key:"calm",label:"الهدوء",hint:"اتزان الإيقاع والردود المريحة."},
+   {key:"playful",label:"المرح",hint:"العفوية وخفة الدم في وقتها."},
+   {key:"serious",label:"الجدية",hint:"التركيز والدقة والوضوح."},
+   {key:"affectionate",label:"الحنان",hint:"الدفء والاهتمام من غير مبالغة."},
+   {key:"enthusiastic",label:"الحماس",hint:"الحيوية والتفاعل الإيجابي."},
+   {key:"lightly_sarcastic",label:"السخرية بخفة",hint:"تعليقات ذكية من غير تجريح."}
+  ];
+  const personalityPresets={
+   friendly_girl:{name:"The Friendly Girl",description:"اجتماعية، لطيفة، مرحة، بتحب الكلام والعفوية.",mood:{calm:35,playful:70,serious:35,affectionate:55,enthusiastic:60,lightly_sarcastic:20}},
+   mature_woman:{name:"The Mature Woman",description:"هادية، ناضجة، واثقة، بتتكلم بتركيز.",mood:{calm:75,playful:15,serious:85,affectionate:50,enthusiastic:25,lightly_sarcastic:10}},
+   playful_girl:{name:"The Playful Girl",description:"خفيفة الدم، تلقائية، بتحب الهزار والمواقف الطريفة.",mood:{calm:20,playful:90,serious:25,affectionate:45,enthusiastic:80,lightly_sarcastic:55}}
+  };
+  let personalityState={preset_id:"friendly_girl",mood:{...personalityPresets.friendly_girl.mood}};
+  const personalityStatus=(message,kind="")=>{$("personalityStatus").textContent=message;$("personalityStatus").className="status "+kind};
+  const renderPersonalityPresets=()=>{
+   const box=$("personalityPresets");box.replaceChildren();
+   Object.entries(personalityPresets).forEach(([id,preset])=>{
+    const button=document.createElement("button");button.type="button";button.className="personality-preset";button.setAttribute("aria-pressed",String(personalityState.preset_id===id));
+    const title=document.createElement("strong");title.textContent=preset.name;
+    const description=document.createElement("span");description.textContent=preset.description;
+    const action=document.createElement("small");action.textContent=personalityState.preset_id===id?"النموذج المختار":"استخدام النموذج";
+    button.append(title,description,action);
+    button.onclick=()=>{personalityState={preset_id:id,mood:{...preset.mood}};renderPersonalityPresets();renderPersonalitySliders();personalityStatus("تم تحميل نسب "+preset.name+" — احفظ التغييرات لتطبيقها.","")};
+    box.append(button);
+   });
+   const custom=document.createElement("div");custom.className="personality-preset";custom.innerHTML="<strong>Custom Mix</strong><span>مزيج خاص من اختيارك بعد تعديل أشرطة التحكم.</span><small>"+(personalityState.preset_id==="custom"?"النموذج المختار":"يتحدد تلقائيًا عند التعديل اليدوي")+"</small>";box.append(custom);
+  };
+  const renderPersonalitySliders=()=>{
+   const box=$("personalitySliders");box.replaceChildren();
+   personalityAxes.forEach(axis=>{
+    const card=document.createElement("div");card.className="personality-slider";
+    const head=document.createElement("div");head.className="personality-slider-head";
+    const label=document.createElement("label");label.textContent=axis.label;label.htmlFor="personality-"+axis.key;
+    const output=document.createElement("output");output.textContent=(personalityState.mood[axis.key]??0)+"%";
+    const input=document.createElement("input");input.type="range";input.min="0";input.max="100";input.step="5";input.value=String(personalityState.mood[axis.key]??0);input.id="personality-"+axis.key;
+    input.addEventListener("input",()=>{const value=Number(input.value);personalityState.mood[axis.key]=value;output.textContent=value+"%";personalityState.preset_id="custom";renderPersonalityPresets()});
+    const hint=document.createElement("small");hint.textContent=axis.hint;
+    head.append(label,output);card.append(head,input,hint);box.append(card);
+   });
+  };
+  const loadPersonalitySettings=async()=>{
+   personalityStatus("جارٍ تحميل إعدادات الشخصية…");
+   try{
+    const data=await apiRequest("/admin/personality-settings");
+    const mood=data.mood||personalityPresets.friendly_girl.mood;
+    personalityState={preset_id:personalityPresets[data.preset_id]?data.preset_id:"custom",mood:{}};
+    personalityAxes.forEach(axis=>{const value=Number(mood[axis.key]);personalityState.mood[axis.key]=Number.isFinite(value)?Math.max(0,Math.min(100,value)):50});
+    renderPersonalityPresets();renderPersonalitySliders();
+    personalityStatus(data.saved?"تم تحميل الإعدادات المحفوظة.":"دي القيم الافتراضية — اختار وعدّل ثم احفظ.","ok");
+   }catch(e){personalityStatus("تعذر تحميل إعدادات الشخصية: "+e.message,"bad")}
+  };
+  $("personalityReloadBtn").onclick=loadPersonalitySettings;
+  $("personalitySaveBtn").onclick=async()=>{
+   const btn=$("personalitySaveBtn");const payload={preset_id:personalityState.preset_id,...personalityState.mood};
+   btn.disabled=true;personalityStatus("جارٍ حفظ إعدادات الشخصية…");
+   try{await apiRequest("/admin/personality-settings",{method:"PUT",body:JSON.stringify(payload)});personalityStatus("تم حفظ إعدادات الشخصية. هتُطبّق على طلبات نايرا الجديدة.","ok")}
+   catch(e){personalityStatus("فشل حفظ إعدادات الشخصية: "+e.message,"bad")}
+   finally{btn.disabled=false}
+  };
  const accessResponseLabels={greeting:"التحية",identity:"التعارف: مين نايرا؟",capabilities:"قدرات نايرا",how_to_get_invite:"كيفية الحصول على دعوة",why_locked:"سبب نظام الدعوات",wants_to_chat:"الرغبة في بدء محادثة",sent_code:"إرسال كود أو رابط",persistence:"الإلحاح وتكرار الطلب",photo:"إرسال صورة",voice:"إرسال فويس أو صوت",video:"إرسال فيديو",file:"إرسال ملف",sticker:"إرسال ملصق",location:"مشاركة الموقع",default:"رد عام"};
  let accessResponses={};
  const accessResponsesStatus=(message,kind="")=>{$("accessResponsesStatus").textContent=message;$("accessResponsesStatus").className="status "+kind};
@@ -568,7 +655,7 @@ body.drawer-open{overflow:hidden}
   finally{btn.disabled=false}
  };
 
- const viewTitles={automations:"الأتمتة",skills:"مركز المهارات",activity:"سجل الأنشطة",integrations:"التطبيقات المتصلة",monitor:"مركز المراقبة",server:"إدارة السيرفر",overview:"نظرة عامة",workspace:"مساحة العمل",decisions:"الأولويات",content:"قنوات المحتوى",botSettings:"إعدادات البوت",access:"الدعوات والأعضاء",system:"الاتصال والأمان"};
+ const viewTitles={automations:"الأتمتة",skills:"مركز المهارات",activity:"سجل الأنشطة",integrations:"التطبيقات المتصلة",monitor:"مركز المراقبة",server:"إدارة السيرفر",overview:"نظرة عامة",workspace:"مساحة العمل",decisions:"الأولويات",content:"قنوات المحتوى",botSettings:"إعدادات البوت",personality:"الشخصية والمزاج",access:"الدعوات والأعضاء",system:"الاتصال والأمان"};
  const activateView=(viewId,writeHash=true)=>{
   const target=viewTitles[viewId]?viewId:"overview";
   document.querySelectorAll("#sideDrawer .nav-group").forEach(group=>{
@@ -587,6 +674,7 @@ body.drawer-open{overflow:hidden}
   if(target==="content") loadContentChannels();
   if(target==="server"&&token) loadServerDeployments();
   if(target==="botSettings"&&token){loadBotSettings();loadAccessResponses();loadAIProviders();}
+   if(target==="personality"&&token) loadPersonalitySettings();
   if(target==="access"&&token) loadAccessData();
   if(target==="skills"&&token) loadSkills();
  };
