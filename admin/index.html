@@ -8,7 +8,7 @@
 :root{color-scheme:light;--bg:#f3f0e8;--surface:#fffefa;--surface2:#f8f6ef;--ink:#242522;--muted:#77796f;--line:#e7e3d8;--olive:#899477;--olive-dark:#657052;--olive-soft:#edf0e7;--gold:#c5a96b;--red:#b65f59;--shadow:0 12px 34px rgba(47,48,39,.055);--radius:19px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh}button,input,textarea,select{font:inherit}button{cursor:pointer}.hidden{display:none!important}
 .login-wrap{position:fixed;inset:0;width:100%;height:100vh;height:100dvh;min-height:0;display:grid;place-items:center;align-content:center;overflow-y:auto;overscroll-behavior:contain;padding:22px;background:radial-gradient(ellipse at 50% 0%,#dfe3d5 0,transparent 48%),var(--bg)}.login-card{flex:none;}.login-card{width:min(100%,430px);background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:34px;box-shadow:0 24px 70px #34372b12}.login-brand{display:flex;align-items:center;justify-content:center;gap:13px;margin-bottom:28px}.mark{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;color:#fff;font-family:Georgia,serif;font-size:25px;background:var(--ink);box-shadow:0 6px 16px #24252224}.login-brand strong{font-size:17px;letter-spacing:2px}.login-brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px;margin-top:4px}.login-card h1{text-align:center;font-size:23px;margin:0 0 7px}.login-card .hint{text-align:center;color:var(--muted);font-size:13px;margin:0 0 25px}.field{display:grid;gap:8px;margin:14px 0}.field label{color:var(--muted);font-size:12px;font-weight:650}.field input{width:100%;background:#fbfaf6;color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:14px;outline:none}.field input:focus{border-color:var(--olive);box-shadow:0 0 0 3px #89947720}.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:11px;padding:10px 15px;transition:.18s ease;font-size:12px;font-weight:650}.btn:hover{transform:translateY(-1px);border-color:#c9cbbb;box-shadow:0 5px 14px #2425220b}.btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}.btn.primary:hover{background:#3b3d35}.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}.login-card .btn{width:100%;margin-top:12px;padding:14px}.status{font-size:12px;color:var(--muted);margin:12px 2px 0;min-height:18px;line-height:1.7}.status.ok{color:var(--olive-dark)}.status.bad{color:var(--red)}
-.shell{display:grid;grid-template-columns:258px minmax(0,1fr);min-height:100vh;max-width:1800px;margin:auto}.side{background:var(--surface);border-left:1px solid var(--line);padding:27px 18px 20px;display:flex;flex-direction:column;gap:30px;position:sticky;top:0;height:100vh}.brand{display:flex;align-items:center;gap:12px;padding:0 8px}.brand strong{font-size:15px;letter-spacing:1.7px}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:1.6px;margin-top:4px}.brand .mark{width:43px;height:43px}.nav{display:grid;gap:6px}.nav:before{content:"WORKSPACE";font-size:9px;letter-spacing:2px;color:#a1a195;font-weight:800;padding:0 13px 8px}.nav button{border:0;background:transparent;color:#77796f;padding:12px 14px;text-align:right;border-radius:12px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:12px;transition:.18s}.nav button:before{content:"";width:7px;height:7px;border:1.5px solid #a4a697;border-radius:3px;display:inline-block;flex:none}.nav button.active,.nav button:hover{background:var(--olive-soft);color:var(--ink)}.nav button.active:before{background:var(--olive);border-color:var(--olive);box-shadow:0 0 0 4px #89947720}.side-note{margin-top:auto;border:1px solid var(--line);border-radius:15px;padding:18px 20px;color:var(--muted);font-size:11px;line-height:1.5;text-align:center;white-space:nowrap;background:var(--surface2)}.side-note:before{display:none}.main{padding:34px clamp(18px,3.4vw,52px);width:100%;max-width:1500px;margin:0 auto}.top{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:29px;padding-bottom:22px;border-bottom:1px solid #e4e0d5}.eyebrow{color:var(--olive-dark);font-size:10px;letter-spacing:2.4px;font-weight:850}.top h1{font-size:28px;letter-spacing:-.7px;margin:7px 0 5px}.sub{color:var(--muted);font-size:12px}.actions{display:flex;gap:8px;flex-wrap:wrap}.actions .btn{padding:10px 13px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:18px 0 25px}.metric,.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.metric{padding:19px 19px 17px;position:relative;overflow:hidden}.metric:after{content:"";position:absolute;left:-15px;bottom:-24px;width:78px;height:78px;border-radius:50%;background:var(--olive-soft)}.metric span{color:var(--muted);font-size:11px;font-weight:650}.metric strong{display:block;font-size:31px;line-height:1.25;margin-top:12px;font-weight:750;letter-spacing:-.7px;font-variant-numeric:tabular-nums;position:relative;z-index:1}.metric small{display:block;color:#929388;font-size:10px;margin-top:5px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:2px 0 15px}.section-head h2{font-size:15px;letter-spacing:-.2px;margin:0}.section-head span{font-size:10px;color:var(--muted);background:var(--surface2);padding:6px 9px;border-radius:20px}.workspace{display:grid;grid-template-columns:1.12fr .88fr;gap:15px}.panel{padding:20px}.goal-list,.project-list{display:grid;gap:10px}.goal{padding:15px;border:1px solid var(--line);border-radius:14px;background:#fffefa}.goal-top{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:8px}.goal h3{font-size:13px;margin:0}.goal p,.project p{font-size:11px;color:var(--muted);line-height:1.85;margin:7px 0}.goal textarea{width:100%;min-height:76px;resize:vertical;font-size:12px;background:#fbfaf6;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:11px;outline:none}.goal textarea:focus{border-color:var(--olive)}.goal-bottom{display:flex;gap:8px;align-items:center;margin-top:10px}.goal select{background:#fbfaf6;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:9px;font-size:11px}.goal .btn{margin-right:auto;padding:9px 12px;font-size:11px}.pill{border:1px solid #dfe4d6;border-radius:999px;padding:5px 10px;color:var(--olive-dark);background:var(--olive-soft);font-size:10px;white-space:nowrap;font-weight:700}.project{padding:14px;border:1px solid var(--line);border-radius:13px;background:#fffefa}.project strong{font-size:12px}.reflection{white-space:pre-wrap;color:var(--muted);font-size:12px;line-height:1.95}.history-list{display:grid;gap:10px}.history-item{padding:14px;border:1px solid var(--line);border-radius:13px;background:#fffefa}.history-item strong{font-size:12px}.history-item small{display:block;color:var(--olive-dark);font-size:10px;margin:5px 0 8px}.history-item p{white-space:pre-wrap;color:var(--muted);font-size:11px;line-height:1.9;margin:0}.history-next{margin-top:8px;color:var(--ink)!important}.empty{padding:25px;text-align:center;color:#929388;font-size:12px;background:var(--surface2);border:1px dashed var(--line);border-radius:13px}.view{display:none;animation:rise .22s ease}.view.active{display:block}@keyframes rise{from{opacity:.45;transform:translateY(5px)}to{opacity:1;transform:none}}.foot{color:#99998f;font-size:10px;text-align:center;margin:30px 0 10px;letter-spacing:.4px}
+.shell{display:grid;grid-template-columns:258px minmax(0,1fr);min-height:100vh;max-width:1800px;margin:auto}.side{background:var(--surface);border-left:1px solid var(--line);padding:27px 18px 20px;display:flex;flex-direction:column;gap:30px;position:sticky;top:0;height:100vh}.brand{display:flex;align-items:center;gap:12px;padding:0 8px}.brand strong{font-size:15px;letter-spacing:1.7px}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:1.6px;margin-top:4px}.brand .mark{width:43px;height:43px}.nav{display:grid;gap:6px}.nav:before{content:"WORKSPACE";font-size:9px;letter-spacing:2px;color:#a1a195;font-weight:800;padding:0 13px 8px}.nav button{border:0;background:transparent;color:#77796f;padding:12px 14px;text-align:right;border-radius:12px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:12px;transition:.18s}.nav button:before{content:"";width:7px;height:7px;border:1.5px solid #a4a697;border-radius:3px;display:inline-block;flex:none}.nav button.active,.nav button:hover{background:var(--olive-soft);color:var(--ink)}.nav button.active:before{background:var(--olive);border-color:var(--olive);box-shadow:0 0 0 4px #89947720}.side-note{margin-top:auto;border:1px solid var(--line);border-radius:15px;padding:18px 20px;color:var(--muted);font-size:11px;line-height:1.5;text-align:center;white-space:nowrap;background:var(--surface2)}.side-note:before{display:none}.main{padding:34px clamp(18px,3.4vw,52px);width:100%;max-width:1500px;margin:0 auto}.top{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:29px;padding-bottom:22px;border-bottom:1px solid #e4e0d5}.eyebrow{color:var(--olive-dark);font-size:10px;letter-spacing:2.4px;font-weight:850}.top h1{font-size:28px;letter-spacing:-.7px;margin:7px 0 5px}.sub{color:var(--muted);font-size:12px}.actions{display:flex;gap:8px;flex-wrap:wrap}.actions .btn{padding:10px 13px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:18px 0 25px}.metric,.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.metric{padding:19px 19px 17px;position:relative;overflow:hidden}.metric:after{content:"";position:absolute;left:-15px;bottom:-24px;width:78px;height:78px;border-radius:50%;background:var(--olive-soft)}.metric span{color:var(--muted);font-size:11px;font-weight:650}.metric strong{display:block;font-size:31px;line-height:1.25;margin-top:12px;font-weight:750;letter-spacing:-.7px;font-variant-numeric:tabular-nums;position:relative;z-index:1}.metric small{display:block;color:#929388;font-size:10px;margin-top:5px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:2px 0 15px}.section-head h2{font-size:15px;letter-spacing:-.2px;margin:0}.section-head span{font-size:10px;color:var(--muted);background:var(--surface2);padding:6px 9px;border-radius:20px}.workspace{display:grid;grid-template-columns:1.12fr .88fr;gap:15px}.panel{padding:20px}.goal-list,.project-list{display:grid;gap:10px}.goal{padding:15px;border:1px solid var(--line);border-radius:14px;background:#fffefa}.goal-top{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:8px}.goal h3{font-size:13px;margin:0}.goal p,.project p{font-size:11px;color:var(--muted);line-height:1.85;margin:7px 0}.goal textarea{width:100%;min-height:76px;resize:vertical;font-size:12px;background:#fbfaf6;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:11px;outline:none}.goal textarea:focus{border-color:var(--olive)}.goal-bottom{display:flex;gap:8px;align-items:center;margin-top:10px}.goal select{background:#fbfaf6;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:9px;font-size:11px}.goal .btn{margin-right:auto;padding:9px 12px;font-size:11px}.pill{border:1px solid #dfe4d6;border-radius:999px;padding:5px 10px;color:var(--olive-dark);background:var(--olive-soft);font-size:10px;white-space:nowrap;font-weight:700}.project{padding:14px;border:1px solid var(--line);border-radius:13px;background:#fffefa}.project strong{font-size:12px}.reflection{white-space:pre-wrap;color:var(--muted);font-size:12px;line-height:1.95}.history-list{display:grid;gap:10px}.history-item{padding:14px;border:1px solid var(--line);border-radius:13px;background:#fffefa}.history-item strong{font-size:12px}.history-item small{display:block;color:var(--olive-dark);font-size:10px;margin:5px 0 8px}.history-item p{white-space:pre-wrap;color:var(--muted);font-size:11px;line-height:1.9;margin:0}.history-next{margin-top:8px;color:var(--ink)!important}.empty{padding:25px;text-align:center;color:#929388;font-size:12px;background:var(--surface2);border:1px dashed var(--line);border-radius:13px}.view{display:none;animation:rise .22s ease}.view.active{display:block}@keyframes rise{from{opacity:.45;transform:translateY(5px)}to{opacity:1;transform:none}}body.developer-session #server{display:none!important}body.developer-session #workspace>:not(#developerDataPanel),body.developer-session #decisions>:not(#developerDataPanel){display:none!important}.foot{color:#99998f;font-size:10px;text-align:center;margin:30px 0 10px;letter-spacing:.4px}
 #decisions>.panel>.reflection{max-width:850px}#feedbackSummary{margin-bottom:14px}#decisionList{margin-top:14px}#decisionList .history-item{padding:17px}#decisionList .history-item strong{font-size:13px}#decisionList .goal-bottom{margin-top:13px}#decisionList .btn{min-width:88px}
 .content-form{margin-top:12px}.content-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 15px}.content-form textarea{width:100%;resize:vertical;background:#fbfaf6;color:var(--ink);border:1px solid var(--line);border-radius:11px;padding:12px;outline:none;font-size:12px}.content-checks{display:flex;flex-wrap:wrap;gap:10px}.content-checks label{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--muted);background:var(--surface2);border:1px solid var(--line);padding:8px 10px;border-radius:10px}.content-channel-list,.content-items-list{display:grid;gap:10px}.content-channel{border:1px solid var(--line);border-radius:14px;padding:15px;background:#fffefa}.content-channel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.content-channel strong{font-size:13px}.content-meta{font-size:11px;color:var(--muted);line-height:1.8;margin:7px 0}.content-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.content-actions .btn{font-size:11px;padding:8px 10px}.content-item{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--line);border-radius:11px;padding:11px}.content-item strong{font-size:11px}.content-item small{display:block;color:var(--muted);font-size:10px;margin-top:4px}@media(max-width:700px){.content-fields{grid-template-columns:1fr}.content-channel-head{flex-direction:column}.content-checks{gap:6px}}@media(max-width:1050px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.workspace{grid-template-columns:1fr}.side{width:230px}.shell{grid-template-columns:230px minmax(0,1fr)}}
 @media(max-width:700px){.shell{display:block}.side{position:relative;top:auto;width:auto;height:auto;padding:13px 13px 10px;gap:12px;border-left:0;border-bottom:1px solid var(--line)}.brand{justify-content:center;padding:2px}.brand .mark{width:35px;height:35px;border-radius:12px;font-size:20px}.brand strong{font-size:13px}.brand small{font-size:8px}.nav{display:flex;overflow-x:auto;gap:6px;padding:2px 0 4px;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.nav:before{display:none}.nav button{white-space:nowrap;flex:none;text-align:center;padding:9px 12px;font-size:11px;gap:7px;background:var(--surface2)}.nav button:before{width:6px;height:6px}.side-note{display:none}.main{padding:20px 13px}.top{align-items:flex-start;flex-direction:column;gap:13px;margin-bottom:19px;padding-bottom:16px}.top h1{font-size:24px}.actions{width:100%}.actions .btn{flex:1}.grid{gap:9px;margin:13px 0 18px}.metric{padding:14px 13px;border-radius:15px}.metric strong{font-size:25px;margin-top:9px}.metric span{font-size:10px}.metric small{font-size:9px}.panel{padding:14px;border-radius:16px}.section-head h2{font-size:14px}.section-head span{font-size:9px}.goal-bottom{flex-wrap:wrap}.goal select{flex:1;min-width:120px}.goal .btn{margin-right:0}.login-card{padding:27px 22px}}
@@ -113,11 +113,19 @@ body.drawer-open{overflow:hidden}
 <section id="bootScreen"><div class="boot-mark" aria-hidden="true"></div><div>جارٍ تجهيز مساحة نايرا…</div></section>
 <section id="loginScreen" class="login-wrap hidden"><div class="login-card">
   <div class="login-brand"><div class="mark">N</div><div><strong>NYRA CONTROL</strong><small>PRIVATE ADMIN SPACE</small></div></div>
-  <h1>تسجيل الدخول</h1><p class="hint">سجّل الدخول للمتابعة إلى لوحة تحكم نايرا</p>
+  <h1>تسجيل الدخول</h1><p class="hint">اختر نوع الحساب للمتابعة إلى لوحة تحكم نايرا</p>
+  <div class="actions" style="justify-content:center;margin-bottom:15px"><button class="btn primary" id="ownerLoginMode" type="button">دخول المالك</button><button class="btn" id="developerLoginMode" type="button">دخول المطور</button></div>
   <form id="loginForm" autocomplete="on">
     <div class="field"><label for="username">اسم المستخدم</label><input id="username" name="username" value="admin" autocomplete="username" required></div>
     <div class="field"><label for="password">كلمة المرور</label><input id="password" name="password" type="password" autocomplete="current-password" required></div>
-    <button class="btn primary" id="loginBtn" type="submit">تسجيل الدخول</button>
+    <button class="btn primary" id="loginBtn" type="submit">دخول آمن</button>
+  </form>
+  <form id="staffLoginForm" class="hidden" autocomplete="off">
+    <p class="hint">لازم تكون مضافًا من المالك، وتكون بدأت محادثة مع بوت نايرا مرة واحدة على الأقل حتى يستقبل Telegram كود الدخول.</p>
+    <div class="field"><label for="staffTelegramId">معرّف Telegram المسجل لدى المالك</label><input id="staffTelegramId" inputmode="numeric" pattern="[0-9]+" required></div>
+    <button class="btn" id="staffRequestCode" type="button">إرسال كود إلى Telegram</button>
+    <div class="field"><label for="staffOtpCode">كود التحقق المكوّن من 6 أرقام</label><input id="staffOtpCode" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required></div>
+    <button class="btn primary" id="staffVerifyCode" type="submit">التحقق والدخول</button>
   </form>
   <div id="loginStatus" class="status" role="status"></div>
 </div></section>
@@ -125,6 +133,7 @@ body.drawer-open{overflow:hidden}
 <div id="sideBackdrop" aria-hidden="true"></div>
 <aside class="side" id="sideDrawer" aria-label="القائمة الجانبية"><div class="brand"><div class="mark">N</div><div><strong>NYRA CONTROL</strong><small>PRIVATE ADMIN SPACE</small></div><button class="side-close" id="sideCloseBtn" type="button" aria-label="إغلاق القائمة">×</button></div>
 <nav class="nav" aria-label="التنقل">
+ <button class="hidden" data-view="developerHome">مساحة المطور</button>
  <section class="nav-group open" data-views="overview workspace decisions">
   <button class="nav-group-toggle" type="button" aria-expanded="true"><span>الرئيسية</span></button>
   <div class="nav-items">
@@ -159,6 +168,7 @@ body.drawer-open{overflow:hidden}
    <button data-view="activity">سجل الأنشطة</button>
    <button data-view="automations">الأتمتة</button>
    <button data-view="skills">مركز المهارات</button>
+   <button data-view="team" data-owner-only="true">فريق العمل</button>
    <button data-view="system">الاتصال والأمان</button>
   </div>
  </section>
@@ -347,20 +357,111 @@ body.drawer-open{overflow:hidden}
  <section class="panel" style="margin-top:14px"><div class="section-head"><h2>حدود الأمان</h2><span>صلاحيات محددة</span></div><p class="reflection">تفعيل المهارة يحفظ تفضيلها في قاعدة البيانات فقط في هذه المرحلة. لا يتيح استيراد أكواد خارجية أو تشغيل أوامر حرة. البحث يتطلب طلبًا صريحًا وموافقة، وأي مهارة جديدة ستحتاج ربطًا واختبارًا قبل إتاحتها.</p></section>
 </section>
 
+<section class="view" id="developerHome"><section class="panel"><div class="section-head"><h2>مساحة المطور</h2><span>جلسة مطور موثّقة</span></div><p class="reflection">تم التحقق من هويتك عبر Telegram. الأقسام المتاحة أدناه تتحدد وفق الصلاحيات الحالية، ويعيد الخادم فحص كل عملية قبل تنفيذها.</p><div id="developerPermissions" class="history-list"></div></section></section>
+<section class="view" id="team"><section class="panel"><div class="section-head"><h2>فريق العمل — Team Management</h2><button class="btn" id="teamReload">تحديث</button></div><p class="reflection">أضف المطورين باستخدام معرّف Telegram. كل حساب يبدأ بلا صلاحيات، والمالك وحده يمنحها أو يسحبها.</p><form id="teamAddForm" class="content-fields"><div class="field"><label for="teamTelegramId">Telegram ID</label><input id="teamTelegramId" inputmode="numeric" required></div><div class="field"><label for="teamUsername">اسم المستخدم (اختياري)</label><input id="teamUsername" maxlength="64"></div><div class="field"><label for="teamFirstName">الاسم الأول (اختياري)</label><input id="teamFirstName" maxlength="128"></div><div class="field"><label for="teamLastName">اسم العائلة (اختياري)</label><input id="teamLastName" maxlength="128"></div><button class="btn primary" type="submit">إضافة مطور بصلاحيات صفر</button></form><div id="teamStatus" class="status"></div><div id="teamList" class="history-list"><div class="empty">جارٍ تحميل فريق العمل…</div></div></section></section>
+
 <section class="view" id="system"><div class="panel"><div class="section-head"><h2>حالة الاتصال</h2><span>جلسة الإدارة</span></div><p class="reflection">تُصدر جلسة دخول موقعة وتنتهي تلقائيًا بعد 12 ساعة. لا يتم حفظ كلمة المرور في المتصفح.</p><p class="reflection">بيانات الدخول تُدار من متغيرات البيئة السرية على سيرفر BotHost.</p><div id="systemStatus" class="status ok">متصل</div></div></section>
 <div class="foot">NYRA · Private Control Room · No conversation text is exposed here.</div></main></div>
 <script>
 (() => {
- const $=id=>document.getElementById(id); const apiBase="https://q90quovuq5.apps.bot-hosting.cloud"; let token=sessionStorage.getItem("nyra_admin_session")||"";
+ const $=id=>document.getElementById(id); const apiBase="https://q90quovuq5.apps.bot-hosting.cloud"; let token=sessionStorage.getItem("nyra_admin_session")||""; let userRole=sessionStorage.getItem("nyra_admin_role")||"owner"; let userPermissions=[]; try{userPermissions=JSON.parse(sessionStorage.getItem("nyra_admin_permissions")||"[]");if(!Array.isArray(userPermissions))userPermissions=[]}catch{userPermissions=[]}
  const loginStatus=(m,k="")=>{$("loginStatus").textContent=m;$("loginStatus").className="status "+k};
  const apiRequest=async(path,opts={})=>{const res=await fetch(apiBase+path,{...opts,headers:{"Authorization":"Bearer "+token,"Content-Type":"application/json",...(opts.headers||{})}});if(!res.ok){const t=await res.text();throw new Error("HTTP "+res.status+": "+t.slice(0,160))}return res.json()};
  const metric=(label,value,hint)=>{const c=document.createElement("div");c.className="metric";const l=document.createElement("span");l.textContent=label;const v=document.createElement("strong");v.textContent=Number(value||0).toLocaleString("en-US");const h=document.createElement("small");h.textContent=hint;c.append(l,v,h);return c};
  const renderGoal=(g,editable)=>{const c=document.createElement("article");c.className="goal";const top=document.createElement("div");top.className="goal-top";const title=document.createElement("h3");title.textContent=g.title;const pill=document.createElement("span");pill.className="pill";pill.textContent=g.status;top.append(title,pill);c.append(top);const desc=document.createElement("p");desc.textContent=g.description||"";c.append(desc);if(editable){const note=document.createElement("textarea");note.maxLength=3000;note.value=g.progress_note||"";const bottom=document.createElement("div");bottom.className="goal-bottom";const sel=document.createElement("select");[["active","نشط"],["paused","متوقف مؤقتًا"],["completed","مكتمل"]].forEach(([v,l])=>{const o=document.createElement("option");o.value=v;o.textContent=l;sel.append(o)});sel.value=["active","paused","completed"].includes(g.status)?g.status:"active";const save=document.createElement("button");save.className="btn primary";save.textContent="حفظ التعديل";save.onclick=async()=>{save.disabled=true;try{await apiRequest("/admin/goals/"+g.id,{method:"PATCH",body:JSON.stringify({progress_note:note.value,status:sel.value})});await loadData()}catch(e){$("systemStatus").textContent=e.message}finally{save.disabled=false}};bottom.append(sel,save);c.append(note,bottom)}return c};
  const loadData=async()=>{const [o,w,h,d,f]=await Promise.all([apiRequest("/admin/overview"),apiRequest("/admin/workspace"),apiRequest("/admin/reflections?limit=14"),apiRequest("/admin/decisions?limit=30").catch(()=>({items:[]})),apiRequest("/admin/decision-feedback").catch(()=>({totals:{approved:0,rejected:0,pending:0},by_source:[]}))]);$("metrics").replaceChildren(metric("المستخدمون",o.users,"إجمالي الحسابات"),metric("الرسائل",o.messages,"رسائل محفوظة"),metric("الذكريات",o.saved_memories,"حقائق محفوظة"),metric("الأحداث الزمنية",o.temporal_events,"أحداث مسجلة"),metric("ملفات العلاقات",o.relationship_profiles,"ملفات ارتباط محفوظة"),metric("الأهداف",o.goals,"أهداف نايرا المسجلة"),metric("المشروعات",o.projects,"مشروعات نايرا المسجلة"));$("overviewGoals").replaceChildren();$("goalEditor").replaceChildren();if(!w.goals.length){$("overviewGoals").innerHTML='<div class="empty">لا توجد أهداف مسجلة.</div>';$("goalEditor").innerHTML='<div class="empty">لا توجد أهداف مسجلة.</div>'}else{w.goals.forEach(g=>$("overviewGoals").append(renderGoal(g,false)));w.goals.forEach(g=>$("goalEditor").append(renderGoal(g,true)))}$("projects").replaceChildren();if(!w.projects.length)$("projects").innerHTML='<div class="empty">لا توجد مشروعات مسجلة.</div>';w.projects.forEach(p=>{const c=document.createElement("article");c.className="project";const t=document.createElement("strong");t.textContent=p.title;const d=document.createElement("p");d.textContent=p.description||"";const s=document.createElement("span");s.className="pill";s.textContent=p.status;const controls=document.createElement("div");controls.className="goal-bottom";const sel=document.createElement("select");[["active","نشط"],["paused","متوقف مؤقتًا"],["completed","مكتمل"]].forEach(([v,l])=>{const o=document.createElement("option");o.value=v;o.textContent=l;sel.append(o)});sel.value=["active","paused","completed"].includes(p.status)?p.status:"active";const save=document.createElement("button");save.className="btn primary";save.textContent="حفظ الحالة";save.onclick=async()=>{save.disabled=true;try{await apiRequest("/admin/projects/"+p.id,{method:"PATCH",body:JSON.stringify({status:sel.value})});await loadData()}catch(e){$("systemStatus").textContent=e.message;save.disabled=false}};controls.append(sel,save);c.append(t,d,s,controls);$("projects").append(c)});const r=w.latest_reflection;$("reflectionDate").textContent=r?r.date:"—";$("reflection").textContent=r?r.title+"\n\n"+r.content+(r.next_step?"\n\nالخطوة التالية: "+r.next_step:""):"لا توجد مراجعة داخلية مسجلة بعد.";$("reflectionHistory").replaceChildren();if(!h.items.length){$("reflectionHistory").innerHTML='<div class="empty">لا توجد مراجعات سابقة.</div>'}h.items.forEach(item=>{const card=document.createElement("article");card.className="history-item";const title=document.createElement("strong");title.textContent=item.title;const date=document.createElement("small");date.textContent=item.date;const body=document.createElement("p");body.textContent=item.content;card.append(title,date,body);if(item.next_step){const next=document.createElement("p");next.className="history-next";next.textContent="الخطوة التالية: "+item.next_step;card.append(next)}$("reflectionHistory").append(card)});$("feedbackSummary").replaceChildren();const ft=f.totals||{};const summary=document.createElement("article");summary.className="history-item";const fh=document.createElement("strong");fh.textContent="تعلّم نايرا من قراراتك";const fp=document.createElement("p");fp.textContent="موافقات: "+(ft.approved||0)+" · رفض: "+(ft.rejected||0)+" · معلّق: "+(ft.pending||0)+" . لا يؤثر السجل على الترتيب قبل وجود قرارين مراجَعين على الأقل من النوع نفسه، والتأثير محدود بـ ±10 نقاط.";summary.append(fh,fp);$("feedbackSummary").append(summary);(f.by_source||[]).forEach(x=>{const line=document.createElement("article");line.className="history-item";const name=document.createElement("strong");name.textContent=({reflection:"المراجعات اليومية",goal:"الأهداف",project:"المشروعات"}[x.source_type]||x.source_type);const detail=document.createElement("p");detail.textContent="موافقات "+x.approved+" · رفض "+x.rejected+" · تأثير الترتيب "+(x.adjustment>0?"+":"")+x.adjustment;line.append(name,detail);$("feedbackSummary").append(line)});$("decisionList").replaceChildren();if(!d.items.length){$("decisionList").innerHTML='<div class="empty">لا توجد مقترحات بعد. اضغط تحليل الأولويات لإنشائها.</div>'}d.items.forEach(item=>{const card=document.createElement("article");card.className="history-item";const title=document.createElement("strong");title.textContent=item.title+" · "+item.date;const status=document.createElement("small");status.textContent=item.status==="pending"?"بانتظار قرارك":item.status==="approved"?"تم الاعتماد":"مرفوض";const score=document.createElement("small");score.textContent="درجة الأولوية: "+item.priority_score;const recommendation=document.createElement("p");recommendation.textContent="المقترح: "+item.recommendation;const reason=document.createElement("p");reason.textContent="السبب والمصدر: "+item.reason;card.append(title,status,score,recommendation,reason);if(item.status==="pending"){const actions=document.createElement("div");actions.className="goal-bottom";for(const [value,label] of [["approved","اعتماد"],["rejected","رفض"]]){const button=document.createElement("button");button.className="btn"+(value==="approved"?" primary":"");button.textContent=label;button.onclick=async()=>{button.disabled=true;try{await apiRequest("/admin/decisions/"+item.id,{method:"PATCH",body:JSON.stringify({status:value})});await loadData()}catch(e){$("decisionsStatus").textContent=e.message;button.disabled=false}};actions.append(button)}card.append(actions)}$("decisionList").append(card)})};
  const showBoot=()=>{$("bootScreen").classList.remove("hidden");$("loginScreen").classList.add("hidden");$("appScreen").classList.add("hidden")};
- const showLogin=()=>{$("bootScreen").classList.add("hidden");$("appScreen").classList.add("hidden");$("loginScreen").classList.remove("hidden")};
- const showApp=async()=>{showBoot();await loadData();$("bootScreen").classList.add("hidden");$("loginScreen").classList.add("hidden");$("appScreen").classList.remove("hidden");$("systemStatus").textContent="الاتصال آمن والبيانات اتحدثت."};
- $("loginForm").addEventListener("submit",async e=>{e.preventDefault();const btn=$("loginBtn");btn.disabled=true;btn.textContent="جارٍ التحقق…";try{const res=await fetch(apiBase+"/admin/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({username:$("username").value.trim(),password:$("password").value})});if(!res.ok){const t=await res.text();throw new Error(res.status===401?"اسم المستخدم أو كلمة المرور غير صحيحة.":"تعذر تسجيل الدخول: HTTP "+res.status+" "+t.slice(0,100))}const data=await res.json();token=data.access_token;sessionStorage.setItem("nyra_admin_session",token);await showApp()}catch(err){token="";sessionStorage.removeItem("nyra_admin_session");loginStatus(err.message,"bad")}finally{btn.disabled=false;btn.textContent="تسجيل الدخول";$("password").value=""}});
+ const showLogin=()=>{document.body.classList.remove("developer-session");$("bootScreen").classList.add("hidden");$("appScreen").classList.add("hidden");$("loginScreen").classList.remove("hidden")};
+ const permissionViews={
+  "overview.read":["overview","نظرة عامة"],"workspace.read":["workspace","مساحة العمل"],"decisions.read":["decisions","الأولويات"],
+  "content.manage":["content","قنوات المحتوى"],"bot.settings":["botSettings","إعدادات البوت"],"access.manage":["access","الدعوات والأعضاء"],
+  "monitor.read":["monitor","مركز المراقبة"],"integrations.read":["integrations","التطبيقات المتصلة"],"activity.read":["activity","سجل الأنشطة"],
+  "automations.manage":["automations","الأتمتة"],"skills.manage":["skills","مركز المهارات"]
+ };
+ const developerViewPermission={overview:"overview.read",workspace:"workspace.read",decisions:"decisions.read",content:"content.manage",botSettings:"bot.settings",personality:"bot.settings",access:"access.manage",monitor:"monitor.read",integrations:"integrations.read",activity:"activity.read",automations:"automations.manage",skills:"skills.manage"};
+ const showApp=async()=>{
+  showBoot();
+  document.body.classList.toggle("developer-session",userRole==="developer");
+  if(userRole==="owner"){
+   document.querySelectorAll("[data-owner-only]").forEach(x=>x.classList.remove("hidden"));
+   document.querySelectorAll("[data-view],.view").forEach(x=>x.classList.remove("hidden"));
+   document.querySelector('[data-view="developerHome"]')?.classList.add("hidden");
+   $("developerHome").classList.add("hidden");
+   await loadData();
+   activateView("overview",false);
+  }else{
+   document.querySelectorAll("[data-owner-only]").forEach(x=>x.classList.add("hidden"));
+   document.querySelectorAll("#sideDrawer [data-view]").forEach(x=>x.classList.add("hidden"));
+   document.querySelectorAll(".view").forEach(x=>x.classList.add("hidden"));
+   $("developerHome").classList.remove("hidden");
+   $("developerHome").classList.add("active");
+   $("developerPermissions").replaceChildren();
+   const granted=Array.isArray(userPermissions)?userPermissions:[];
+   granted.forEach(key=>{
+    const item=permissionViews[key];if(!item)return;
+    const [view,label]=item;
+    const nav=document.querySelector('#sideDrawer [data-view="'+view+'"]');
+    const panel=document.getElementById(view);
+    if(nav)nav.classList.remove("hidden");
+    if(panel)panel.classList.remove("hidden");
+    const row=document.createElement("article");row.className="history-item";
+    const title=document.createElement("strong");title.textContent=label;
+    const note=document.createElement("p");note.textContent="الصلاحية الممنوحة: "+key;
+    const open=document.createElement("button");open.type="button";open.className="btn primary";open.textContent="فتح القسم";open.addEventListener("click",()=>activateView(view));
+    row.append(title,note,open);$("developerPermissions").append(row);
+   });
+   if(!granted.some(key=>permissionViews[key])){
+    const empty=document.createElement("div");empty.className="empty";empty.textContent="حسابك نشط، لكن لا توجد صلاحيات تشغيلية ممنوحة حتى الآن. اطلب من المالك تحديد نطاق عملك.";
+    $("developerPermissions").append(empty);
+   }
+   document.querySelector('[data-view="developerHome"]')?.classList.remove("hidden");
+   document.querySelectorAll("#sideDrawer .nav-group").forEach(group=>{
+    const visible=Array.from(group.querySelectorAll(".nav-items [data-view]")).some(button=>!button.classList.contains("hidden"));
+    group.classList.toggle("hidden",!visible);
+   });
+   activateView("developerHome",false);
+  }
+  $("bootScreen").classList.add("hidden");$("loginScreen").classList.add("hidden");$("appScreen").classList.remove("hidden");
+  if(userRole==="owner")$("systemStatus").textContent="الاتصال آمن والبيانات اتحدثت.";
+ };
+ $("loginForm").addEventListener("submit",async e=>{
+  e.preventDefault();const btn=$("loginBtn");btn.disabled=true;btn.textContent="جارٍ التحقق…";
+  try{
+   const res=await fetch(apiBase+"/admin/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({username:$("username").value.trim(),password:$("password").value})});
+   if(!res.ok){const t=await res.text();throw new Error(res.status===401?"اسم المستخدم أو كلمة المرور غير صحيحة.":"تعذر تسجيل الدخول: HTTP "+res.status+" "+t.slice(0,100))}
+   const data=await res.json();token=data.access_token;userRole="owner";userPermissions=[];
+   sessionStorage.setItem("nyra_admin_session",token);sessionStorage.setItem("nyra_admin_role","owner");sessionStorage.removeItem("nyra_admin_permissions");
+   await showApp();
+  }catch(err){token="";sessionStorage.removeItem("nyra_admin_session");sessionStorage.removeItem("nyra_admin_role");loginStatus(err.message,"bad")}
+  finally{btn.disabled=false;btn.textContent="دخول آمن";$("password").value=""}
+ });
+ const setLoginMode=developer=>{
+  $("loginForm").classList.toggle("hidden",developer);$("staffLoginForm").classList.toggle("hidden",!developer);
+  $("ownerLoginMode").classList.toggle("primary",!developer);$("developerLoginMode").classList.toggle("primary",developer);loginStatus("");
+ };
+ $("ownerLoginMode").onclick=()=>setLoginMode(false);$("developerLoginMode").onclick=()=>setLoginMode(true);
+ $("staffRequestCode").onclick=async()=>{
+  const id=Number($("staffTelegramId").value);
+  if(!Number.isSafeInteger(id)||id<=0){loginStatus("اكتب Telegram ID صحيحًا.","bad");return}
+  const button=$("staffRequestCode");button.disabled=true;
+  try{
+   const response=await fetch(apiBase+"/admin/staff/login/request",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({telegram_id:id})});
+   if(!response.ok){let detail="تعذر إرسال الكود. تأكد أن حسابك أضافه المالك وأنك بدأت محادثة البوت.";try{const data=await response.json();detail=data.detail||detail}catch{}throw new Error(detail)}
+   loginStatus("تم إرسال كود التحقق إلى حساب Telegram المسجل. الكود صالح لمدة 5 دقائق.","ok");
+  }catch(error){loginStatus(error.message,"bad")}finally{button.disabled=false}
+ };
+ $("staffLoginForm").addEventListener("submit",async e=>{
+  e.preventDefault();const id=Number($("staffTelegramId").value),code=$("staffOtpCode").value.trim();
+  const button=$("staffVerifyCode");button.disabled=true;
+  try{
+   const response=await fetch(apiBase+"/admin/staff/login/verify",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({telegram_id:id,code})});
+   if(!response.ok){let detail="الكود غير صحيح أو انتهت صلاحيته.";try{const data=await response.json();detail=data.detail||detail}catch{}throw new Error(detail)}
+   const data=await response.json();token=data.access_token;userRole="developer";userPermissions=Array.isArray(data.permissions)?data.permissions:[];
+   sessionStorage.setItem("nyra_admin_session",token);sessionStorage.setItem("nyra_admin_role","developer");sessionStorage.setItem("nyra_admin_permissions",JSON.stringify(userPermissions));
+   await showApp();
+  }catch(error){token="";userRole="";userPermissions=[];sessionStorage.removeItem("nyra_admin_session");sessionStorage.removeItem("nyra_admin_role");sessionStorage.removeItem("nyra_admin_permissions");loginStatus(error.message,"bad")}
+  finally{button.disabled=false}
+ });
  $("generateDecisionsBtn").onclick=async()=>{const btn=$("generateDecisionsBtn");btn.disabled=true;btn.textContent="جارٍ تحليل الأولويات…";$("decisionsStatus").textContent="يتم تحليل بيانات مساحة العمل الداخلية فقط.";try{const result=await apiRequest("/admin/decisions/generate",{method:"POST"});$("decisionsStatus").textContent=result.message;await loadData()}catch(e){$("decisionsStatus").textContent=e.message}finally{btn.disabled=false;btn.textContent="تحليل الأولويات"}};
  $("generateReflectionBtn").onclick=async()=>{const btn=$("generateReflectionBtn");btn.disabled=true;btn.textContent="جارٍ إعداد المراجعة…";$("reflectionStatus").textContent="تتم مراجعة الأهداف والمشروعات المسجلة فقط.";try{const result=await apiRequest("/admin/reflections/generate",{method:"POST"});$("reflectionStatus").textContent=result.message;await loadData()}catch(e){$("reflectionStatus").textContent=e.message}finally{btn.disabled=false;btn.textContent="إنشاء مراجعة اليوم"}};
 
@@ -386,8 +487,8 @@ body.drawer-open{overflow:hidden}
   }catch(e){box.innerHTML='<div class="empty">تعذر تحميل المهارات.</div>';skillsStatus(e.message,"bad")}
  };
  $("skillsReload").onclick=loadSkills;
- $("refreshBtn").onclick=async()=>{try{await loadData();$("systemStatus").textContent="تم تحديث البيانات."}catch(e){$("systemStatus").textContent=e.message}};
- const logout=()=>{token="";sessionStorage.removeItem("nyra_admin_session");showLogin();loginStatus("تم تسجيل الخروج بأمان.")};$("logoutBtn").onclick=logout;
+ $("refreshBtn").onclick=async()=>{try{if(userRole==="owner")await loadData();else if(userRole==="developer"){const active=document.querySelector(".view.active")?.id;if(active==="overview")await loadDeveloperOverview();else if(active==="workspace")await loadDeveloperWorkspace();else if(active==="decisions")await loadDeveloperDecisions();else if(active==="team")return;}$("systemStatus").textContent="تم تحديث البيانات."}catch(error){$("systemStatus").textContent=error.message}};
+ const logout=()=>{token="";userRole="";userPermissions=[];sessionStorage.removeItem("nyra_admin_session");sessionStorage.removeItem("nyra_admin_role");sessionStorage.removeItem("nyra_admin_permissions");showLogin();loginStatus("تم تسجيل الخروج بأمان.")};$("logoutBtn").onclick=logout;
  const contentTypes={audio:"صوت",voice:"فويس",video:"فيديو",photo:"صور",document:"ملفات",animation:"GIF",video_note:"فيديو دائري"};
  const contentStatus=(m,k="")=>{$("contentStatus").textContent=m;$("contentStatus").className="status "+k};
  const selectedMedia=()=>Array.from(document.querySelectorAll('input[name="contentMedia"]:checked')).map(x=>x.value);
@@ -655,28 +756,116 @@ body.drawer-open{overflow:hidden}
   finally{btn.disabled=false}
  };
 
- const viewTitles={automations:"الأتمتة",skills:"مركز المهارات",activity:"سجل الأنشطة",integrations:"التطبيقات المتصلة",monitor:"مركز المراقبة",server:"إدارة السيرفر",overview:"نظرة عامة",workspace:"مساحة العمل",decisions:"الأولويات",content:"قنوات المحتوى",botSettings:"إعدادات البوت",personality:"الشخصية والمزاج",access:"الدعوات والأعضاء",system:"الاتصال والأمان"};
+ const viewTitles={developerHome:"مساحة المطور",team:"فريق العمل",automations:"الأتمتة",skills:"مركز المهارات",activity:"سجل الأنشطة",integrations:"التطبيقات المتصلة",monitor:"مركز المراقبة",server:"إدارة السيرفر",overview:"نظرة عامة",workspace:"مساحة العمل",decisions:"الأولويات",content:"قنوات المحتوى",botSettings:"إعدادات البوت",personality:"الشخصية والمزاج",access:"الدعوات والأعضاء",system:"الاتصال والأمان"};
+ const developerPanel=document.createElement("section");developerPanel.className="panel hidden";developerPanel.id="developerDataPanel";developerPanel.innerHTML='<div class="section-head"><h2 id="developerDataTitle">بيانات القسم</h2><span id="developerDataStatus"></span></div><div id="developerDataBody" class="history-list"></div>';
+ $("developerHome").append(developerPanel);
+ const developerStatus=message=>{$("developerDataStatus").textContent=message||""};
+ const developerCard=(title,description,meta)=>{const card=document.createElement("article");card.className="history-item";const h=document.createElement("strong");h.textContent=title||"عنصر بدون عنوان";const p=document.createElement("p");p.textContent=description||"";const small=document.createElement("small");small.textContent=meta||"";card.append(h,p,small);return card};
+ const loadDeveloperOverview=async()=>{
+  try{const data=await apiRequest("/admin/overview");$("metrics").replaceChildren(metric("المستخدمون",data.users,"إجمالي الحسابات"),metric("الرسائل",data.messages,"رسائل محفوظة"),metric("الأهداف",data.goals,"أهداف مسجلة"),metric("المشروعات",data.projects,"مشروعات مسجلة"));developerStatus("تم تحميل المؤشرات المسموح بها.");}
+  catch(error){developerStatus("تعذر تحميل المؤشرات: "+error.message)}
+ };
+ const loadDeveloperWorkspace=async()=>{
+  const body=$("developerDataBody");body.replaceChildren();
+  try{
+   const data=await apiRequest("/admin/workspace");$("developerDataTitle").textContent="مساحة العمل";
+   const canWrite=userPermissions.includes("workspace.write");
+   (data.goals||[]).forEach(goal=>{
+    const card=developerCard(goal.title,goal.description,goal.status);
+    if(canWrite){
+     const note=document.createElement("textarea");note.value=goal.progress_note||"";note.maxLength=3000;
+     const status=document.createElement("select");[["active","نشط"],["paused","متوقف مؤقتًا"],["completed","مكتمل"]].forEach(([v,l])=>{const option=document.createElement("option");option.value=v;option.textContent=l;status.append(option)});status.value=["active","paused","completed"].includes(goal.status)?goal.status:"active";
+     const save=document.createElement("button");save.className="btn primary";save.textContent="حفظ الهدف";
+     save.onclick=async()=>{save.disabled=true;try{await apiRequest("/admin/goals/"+goal.id,{method:"PATCH",body:JSON.stringify({progress_note:note.value,status:status.value})});await loadDeveloperWorkspace();developerStatus("تم حفظ الهدف.")}catch(error){developerStatus(error.message)}finally{save.disabled=false}};
+     card.append(note,status,save);
+    }body.append(card);
+   });
+   (data.projects||[]).forEach(project=>{
+    const card=developerCard(project.title,project.description,project.status);
+    if(canWrite){
+     const status=document.createElement("select");[["active","نشط"],["paused","متوقف مؤقتًا"],["completed","مكتمل"]].forEach(([v,l])=>{const option=document.createElement("option");option.value=v;option.textContent=l;status.append(option)});status.value=["active","paused","completed"].includes(project.status)?project.status:"active";
+     const save=document.createElement("button");save.className="btn primary";save.textContent="حفظ المشروع";
+     save.onclick=async()=>{save.disabled=true;try{await apiRequest("/admin/projects/"+project.id,{method:"PATCH",body:JSON.stringify({status:status.value})});await loadDeveloperWorkspace();developerStatus("تم حفظ المشروع.")}catch(error){developerStatus(error.message)}finally{save.disabled=false}};
+     card.append(status,save);
+    }body.append(card);
+   });
+   if(!body.children.length)body.append(developerCard("لا توجد أهداف أو مشروعات","ستظهر بيانات مساحة العمل هنا.",""));
+   developerStatus(canWrite?"وضع القراءة والكتابة متاح.":"وضع القراءة فقط.");
+  }catch(error){developerStatus("تعذر تحميل مساحة العمل: "+error.message)}
+ };
+ const loadDeveloperDecisions=async()=>{
+  const body=$("developerDataBody");body.replaceChildren();$("developerDataTitle").textContent="الأولويات والقرارات";
+  try{
+   const data=await apiRequest("/admin/decisions?limit=30");const canReview=userPermissions.includes("decisions.review");
+   if(canReview){const generate=document.createElement("button");generate.className="btn primary";generate.textContent="تحليل الأولويات";generate.onclick=async()=>{generate.disabled=true;try{await apiRequest("/admin/decisions/generate",{method:"POST",body:JSON.stringify({})});await loadDeveloperDecisions()}catch(error){developerStatus(error.message)}finally{generate.disabled=false}};body.append(generate)}
+   (data.items||[]).forEach(item=>{
+    const card=developerCard(item.title,item.recommendation,(item.status||"pending")+" · "+(item.date||""));
+    if(canReview&&item.status==="pending"){for(const [status,label] of [["approved","اعتماد"],["rejected","رفض"]]){const button=document.createElement("button");button.className="btn";button.textContent=label;button.onclick=async()=>{button.disabled=true;try{await apiRequest("/admin/decisions/"+item.id,{method:"PATCH",body:JSON.stringify({status})});await loadDeveloperDecisions()}catch(error){developerStatus(error.message);button.disabled=false}};card.append(button)}}
+    body.append(card);
+   });
+   if(!body.children.length)body.append(developerCard("لا توجد قرارات","لا توجد مقترحات مسجلة حاليًا.",""));
+   developerStatus(canReview?"يمكنك مراجعة القرارات المعلقة.":"عرض فقط — لا تملك صلاحية اعتماد أو رفض القرارات.");
+  }catch(error){developerStatus("تعذر تحميل القرارات: "+error.message)}
+ };
+ const teamStatus=(message,kind="")=>{$("teamStatus").textContent=message;$("teamStatus").className="status "+kind};
+ const loadTeam=async()=>{
+  try{
+   const data=await apiRequest("/admin/team");$("teamList").replaceChildren();
+   (data.items||[]).forEach(member=>{
+    const card=document.createElement("article");card.className="history-item";
+    const title=document.createElement("strong");title.textContent=(member.first_name||member.username||"Developer")+" · Telegram "+member.telegram_id;
+    const status=document.createElement("span");status.className="pill";status.textContent=member.status==="active"?"نشط":"موقوف";
+    const checks=document.createElement("div");checks.className="content-checks";
+    (data.available_permissions||[]).forEach(key=>{const label=document.createElement("label");label.style.display="inline-flex";label.style.gap="6px";label.style.margin="6px";const input=document.createElement("input");input.type="checkbox";input.value=key;input.checked=(member.permissions||[]).includes(key);label.append(input,document.createTextNode(key));checks.append(label)});
+    const actions=document.createElement("div");actions.className="actions";
+    const state=document.createElement("select");[["active","نشط"],["revoked","إيقاف"]].forEach(([value,label])=>{const option=document.createElement("option");option.value=value;option.textContent=label;state.append(option)});state.value=member.status;
+    const save=document.createElement("button");save.className="btn primary";save.textContent="حفظ الصلاحيات والحالة";
+    save.onclick=async()=>{save.disabled=true;try{const permissions=Array.from(checks.querySelectorAll("input:checked")).map(input=>input.value);await apiRequest("/admin/team/"+member.id,{method:"PATCH",body:JSON.stringify({status:state.value,permissions})});teamStatus("تم تحديث حساب المطور.","ok");await loadTeam()}catch(error){teamStatus(error.message,"bad")}finally{save.disabled=false}};
+    actions.append(state,save);card.append(title,status,checks,actions);$("teamList").append(card);
+   });
+   if(!(data.items||[]).length){const empty=document.createElement("div");empty.className="empty";empty.textContent="لم تتم إضافة مطورين بعد.";$("teamList").append(empty)}
+  }catch(error){teamStatus(error.message,"bad")}
+ };
+ $("teamReload").onclick=loadTeam;
+ $("teamAddForm").addEventListener("submit",async event=>{
+  event.preventDefault();const button=event.submitter;button.disabled=true;
+  try{
+   await apiRequest("/admin/team",{method:"POST",body:JSON.stringify({telegram_id:Number($("teamTelegramId").value),username:$("teamUsername").value.trim()||null,first_name:$("teamFirstName").value.trim()||null,last_name:$("teamLastName").value.trim()||null})});
+   $("teamAddForm").reset();teamStatus("تمت إضافة المطور بصلاحيات صفرية.","ok");await loadTeam();
+  }catch(error){teamStatus(error.message,"bad")}finally{button.disabled=false}
+ });
+
  const activateView=(viewId,writeHash=true)=>{
-  const target=viewTitles[viewId]?viewId:"overview";
+  let target=viewTitles[viewId]?viewId:"overview";
+  if(userRole==="developer"&&target!=="developerHome"&&(!developerViewPermission[target]||!userPermissions.includes(developerViewPermission[target])))target="developerHome";
+  if(userRole==="developer"&&target==="team")target="developerHome";
   document.querySelectorAll("#sideDrawer .nav-group").forEach(group=>{
    const contains=(group.dataset.views||"").split(/\s+/).includes(target);
    group.classList.toggle("open",contains);
    const toggle=group.querySelector(".nav-group-toggle");if(toggle)toggle.setAttribute("aria-expanded",contains?"true":"false");
   });
-  document.querySelectorAll("[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===target));
-  document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===target));
-  $("pageTitle").textContent=viewTitles[target];
-  if(writeHash&&location.hash!=="#"+target) history.replaceState(null,"","#"+target);
-  if(target==="automations") renderAutomations();
-   if(target==="monitor"&&token) loadMonitor();
-  if(target==="integrations"&&token) loadIntegrations();
-  if(target==="activity"&&token) loadActivities();
-  if(target==="content") loadContentChannels();
-  if(target==="server"&&token) loadServerDeployments();
-  if(target==="botSettings"&&token){loadBotSettings();loadAccessResponses();loadAIProviders();}
-   if(target==="personality"&&token) loadPersonalitySettings();
-  if(target==="access"&&token) loadAccessData();
-  if(target==="skills"&&token) loadSkills();
+  document.querySelectorAll("[data-view]").forEach(button=>button.classList.toggle("active",button.dataset.view===target));
+  document.querySelectorAll(".view").forEach(view=>view.classList.toggle("active",view.id===target));
+  $("pageTitle").textContent=viewTitles[target]||"مساحة المطور";
+  if(userRole==="developer"){
+   if(target==="workspace"||target==="decisions"){document.getElementById(target).append(developerPanel);developerPanel.classList.remove("hidden")}
+   else{$("developerHome").append(developerPanel);developerPanel.classList.add("hidden")}
+   if(target==="overview")loadDeveloperOverview();
+   if(target==="workspace")loadDeveloperWorkspace();
+   if(target==="decisions")loadDeveloperDecisions();
+  }
+  if(writeHash&&location.hash!=="#"+target)history.replaceState(null,"","#"+target);
+  if(target==="team"&&userRole==="owner")loadTeam();
+  if(target==="automations")renderAutomations();
+  if(target==="monitor"&&token)loadMonitor();
+  if(target==="integrations"&&token)loadIntegrations();
+  if(target==="activity"&&token)loadActivities();
+  if(target==="content"&&token)loadContentChannels();
+  if(target==="server"&&token&&userRole==="owner")loadServerDeployments();
+  if(target==="botSettings"&&token){loadBotSettings();if(userRole==="owner"||userPermissions.includes("access.manage"))loadAccessResponses();loadAIProviders()}
+  if(target==="personality"&&token)loadPersonalitySettings();
+  if(target==="access"&&token)loadAccessData();
+  if(target==="skills"&&token)loadSkills();
  };
  document.querySelectorAll("#sideDrawer .nav-group-toggle").forEach(toggle=>toggle.addEventListener("click",()=>{
   const group=toggle.closest(".nav-group"),wasOpen=group.classList.contains("open");
@@ -783,6 +972,6 @@ body.drawer-open{overflow:hidden}
  window.addEventListener("hashchange",()=>activateView(location.hash.slice(1),false));
  const initialView=location.hash.slice(1)||"overview";
  activateView(initialView,false);
- if(token&&apiBase){showBoot();showApp().catch(()=>{token="";sessionStorage.removeItem("nyra_admin_session");showLogin()})}else{showLogin()}
+ if(token&&apiBase){showBoot();showApp().then(()=>{if(userRole==="owner"&&location.hash&&viewTitles[location.hash.slice(1)])activateView(location.hash.slice(1),false)}).catch(()=>{token="";userRole="";userPermissions=[];sessionStorage.removeItem("nyra_admin_session");sessionStorage.removeItem("nyra_admin_role");sessionStorage.removeItem("nyra_admin_permissions");showLogin()})}else{showLogin()}
 })();
 </script></body></html>
