@@ -373,12 +373,12 @@ body.drawer-open{overflow:hidden}
  const showBoot=()=>{$("bootScreen").classList.remove("hidden");$("loginScreen").classList.add("hidden");$("appScreen").classList.add("hidden")};
  const showLogin=()=>{document.body.classList.remove("developer-session");$("bootScreen").classList.add("hidden");$("appScreen").classList.add("hidden");$("loginScreen").classList.remove("hidden")};
  const permissionViews={
-  "overview.read":["overview","نظرة عامة"],"workspace.read":["workspace","مساحة العمل"],"decisions.read":["decisions","الأولويات"],
+  "overview.read":["developerHome","نظرة عامة"],"workspace.read":["workspace","مساحة العمل"],"decisions.read":["decisions","الأولويات"],
   "content.manage":["content","قنوات المحتوى"],"bot.settings":["botSettings","إعدادات البوت"],"access.manage":["access","الدعوات والأعضاء"],
   "monitor.read":["monitor","مركز المراقبة"],"integrations.read":["integrations","التطبيقات المتصلة"],"activity.read":["activity","سجل الأنشطة"],
   "automations.manage":["automations","الأتمتة"],"skills.manage":["skills","مركز المهارات"]
  };
- const developerViewPermission={overview:"overview.read",workspace:"workspace.read",decisions:"decisions.read",content:"content.manage",botSettings:"bot.settings",personality:"bot.settings",access:"access.manage",monitor:"monitor.read",integrations:"integrations.read",activity:"activity.read",automations:"automations.manage",skills:"skills.manage"};
+ const developerViewPermission={developerHome:"overview.read",workspace:"workspace.read",decisions:"decisions.read",content:"content.manage",botSettings:"bot.settings",personality:"bot.settings",access:"access.manage",monitor:"monitor.read",integrations:"integrations.read",activity:"activity.read",automations:"automations.manage",skills:"skills.manage"};
  const showApp=async()=>{
   showBoot();
   document.body.classList.toggle("developer-session",userRole==="developer");
@@ -763,7 +763,9 @@ body.drawer-open{overflow:hidden}
  const developerStatus=message=>{$("developerDataStatus").textContent=message||""};
  const developerCard=(title,description,meta)=>{const card=document.createElement("article");card.className="history-item";const h=document.createElement("strong");h.textContent=title||"عنصر بدون عنوان";const p=document.createElement("p");p.textContent=description||"";const small=document.createElement("small");small.textContent=meta||"";card.append(h,p,small);return card};
  const loadDeveloperOverview=async()=>{
-  try{const data=await apiRequest("/admin/overview");$("metrics").replaceChildren(metric("المستخدمون",data.users,"إجمالي الحسابات"),metric("الرسائل",data.messages,"رسائل محفوظة"),metric("الأهداف",data.goals,"أهداف مسجلة"),metric("المشروعات",data.projects,"مشروعات مسجلة"));developerStatus("تم تحميل المؤشرات المسموح بها.");}
+  const body=$("developerDataBody");body.replaceChildren();$("developerDataTitle").textContent="نظرة عامة";
+  developerPanel.classList.remove("hidden");
+  try{const data=await apiRequest("/admin/overview");body.append(metric("المستخدمون",data.users,"إجمالي الحسابات"),metric("الرسائل",data.messages,"رسائل محفوظة"),metric("الأهداف",data.goals,"أهداف مسجلة"),metric("المشروعات",data.projects,"مشروعات مسجلة"));developerStatus("مؤشرات تشغيلية فقط — دون عرض محتوى المحادثات.");}
   catch(error){developerStatus("تعذر تحميل المؤشرات: "+error.message)}
  };
  const loadDeveloperWorkspace=async()=>{
