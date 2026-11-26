@@ -162,7 +162,7 @@ body.drawer-open{overflow:hidden}
    <button data-view="integrations">التطبيقات المتصلة</button>
   </div>
  </section>
- <section class="nav-group" data-views="activity automations skills system">
+ <section class="nav-group" data-views="activity automations skills team system">
   <button class="nav-group-toggle" type="button" aria-expanded="false"><span>أدوات الإدارة</span></button>
   <div class="nav-items">
    <button data-view="activity">سجل الأنشطة</button>
@@ -404,6 +404,7 @@ body.drawer-open{overflow:hidden}
     const panel=document.getElementById(view);
     if(nav)nav.classList.remove("hidden");
     if(panel)panel.classList.remove("hidden");
+    if(key==="bot.settings"){document.querySelector('#sideDrawer [data-view="personality"]')?.classList.remove("hidden");$("personality").classList.remove("hidden")}
     const row=document.createElement("article");row.className="history-item";
     const title=document.createElement("strong");title.textContent=label;
     const note=document.createElement("p");note.textContent="الصلاحية الممنوحة: "+key;
